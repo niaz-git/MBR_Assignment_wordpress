@@ -1,1 +1,63 @@
-<h1> Read Me </h1>
+                                                    README - [ ASSIGNMENT ]
+---------------------------------------------------------------------------------------------------------------------------
+
+STEP 1 :  NEW THEME CREATED  
+          @theme_name :  mytheme 
+          #styles added to themes 
+
+STEP II - Create Section and field - for simple alert   
+        @page Name : function.php  : 100 line Number
+        
+
+      register_setting("section","alert_text");   // enter alert text here
+      register_setting("section","posttype");   // this is for load post type
+      register_setting("section","bloglistselect");  //  load post and page list to multiselect 
+
+STEP III:  REGISTER SIMPLE ALERT MENU UNDER SETTINGS 
+          @page Name : function.php  : 100 line Number
+          @menu name : simple alert (  settings ) 
+STEP IV:  Create simple alert coloumn : 
+          
+          #one coloumn added in wp_post , name "simple_alert"
+STEP V:  CREATE AJAX CALL FOR LOAD POST NAME
+        # JS file added mytheme JS folder (   js/ajacall.js) 
+        # PHP File added for load data from database (mytheme/ajax-load.php)
+STEP VI :  POST SIMPLE ALERT 
+        # Post Data to option.php
+        # option.php -  line270   (  added Wp_post simple_alert flag updated ) 
+STEP VII :FRONT END - 
+          # content-single.php updated
+            $alert_flag = get_the_alert();
+							if($alert_flag  == 1 )
+							{   
+								echo '<script type="text/javascript"> alert("'.get_option("alert_text").'")</script>';
+								echo "<h3 style='text-align:center; padding-top:25px;'>Admin working on this Document</h3>";
+								die();
+								
+							}
+
+=================================================================================================================
+ASSIGNEMNET 2:
+
+STEP I: ADDED CONTRIBUTORS
+      #function.php    line : 259, location:mytheme
+           function create_mettag_authors(){
+              add_meta_box('res_authors', 'contributors', 'respons_author_call','post','side');
+          }
+
+STEP II:  loaded users to multiple select box 
+
+STEP III :  Save  Data 
+
+STEP IV  :  FRONTEND 
+          #get post_meta - contributor_key
+
+          #Display name and author link 
+    
+        
+
+
+
+
+        
+        
